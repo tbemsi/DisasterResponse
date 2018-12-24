@@ -71,7 +71,7 @@ def index():
                        ],
               
               'layout': {
-              'title': 'Distribution of Message Genres',
+              'title': 'Distribution of message genres',
               'yaxis': {
               'title': "Count"
               },
@@ -89,7 +89,7 @@ def index():
                        ],
               
               'layout': {
-              'title': 'Top 5 categories',
+              'title': 'Distribution of message categories',
               'yaxis': {
               'title': "Proportion"
               },
@@ -102,12 +102,12 @@ def index():
               'data': [
                        Bar(
                            x=categories_names,
-                           y=gcategories_mean
+                           y=categories_mean
                            )
                        ],
               
               'layout': {
-              'title': 'Distribution of Message Genres',
+              'title': 'Top 5 categories',
               'yaxis': {
               'title': "Count"
               },
@@ -117,12 +117,13 @@ def index():
               }
               }
               ]
-        
-              # encode plotly graphs in JSON
-              ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
-              graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
               
-              # render web page with plotly graphs
+        
+        # encode plotly graphs in JSON
+    ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
+    graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+              
+    # render web page with plotly graphs
     return render_template('master.html', ids=ids, graphJSON=graphJSON)
 
 
