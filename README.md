@@ -7,8 +7,6 @@ In this project, I will be creating a machine learning pipeline to categorize me
 The project will include a web app where an emergency worker can input a new message and get classification results
 in several categories. The web app will also display visualizations of the data.
 
-Below are a few screenshots of the web app.
-
 ## Files and folders in this repository
 
 There are three folders in this repository:
@@ -20,6 +18,26 @@ clean data, training it, and then saving it as a pickle file.
 
 
 ## Repository Layout
+The following is the layout of this repository
+```
+- app
+| - template
+| |- master.html  # main page of web app
+| |- go.html  # classification result page of web app
+|- run.py  # Flask file that runs app
+
+- data
+|- disaster_categories.csv  # data to process 
+|- disaster_messages.csv  # data to process
+|- process_data.py
+|- DisasterResponse.db   # database where clean data is saved
+
+- models
+|- train_classifier.py
+|- classifier.pkl  # saved model 
+
+- README.md
+```
 
 ## How to run the code
 1. Run the following commands in the project's root directory to set up your database and model.
@@ -36,6 +54,13 @@ clean data, training it, and then saving it as a pickle file.
 
 
 ## Libraries Used
+* Flask(1.0.2)
+* nltk(3.4)
+* numpy(1.15.3)
+* pandas(0.23.4)
+* plotly(3.3.0)
+* scikit-learn(0.20.0)
+* SQLAlchemy(1.2.14)
 
 ## Authors and Acknowledgements
 Thanks to Udacity and FigureEight for providing the data for this project.
